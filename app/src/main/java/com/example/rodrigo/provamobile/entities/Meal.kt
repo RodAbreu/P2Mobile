@@ -1,4 +1,4 @@
-package com.example.rodrigo.provamobile
+package com.example.rodrigo.provamobile.entities
 
 data class Meal (val idMeal: String,
                  val strMeal: String,

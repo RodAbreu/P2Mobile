@@ -1,10 +1,12 @@
-package com.example.rodrigo.provamobile
+package com.example.rodrigo.provamobile.entities
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.rodrigo.provamobile.GlideApp
+import com.example.rodrigo.provamobile.R
 import kotlinx.android.synthetic.main.meal_item.view.*
 
 class MealAdapter(val context: Context, val meals: List<Meal>) : RecyclerView.Adapter<MealAdapter.ViewHolder>() {

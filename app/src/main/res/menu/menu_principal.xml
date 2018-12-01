@@ -10,11 +10,21 @@
             app:showAsAction="always|collapseActionView"/>
 
     <item
-            android:id="@+id/menuSalvar"
-            android:title="favoritos"
-            android:icon="@drawable/baseline_favorite_black_24"
+            android:id="@+id/menuMenu"
+            android:title="menu"
+            android:icon="@drawable/baseline_menu_black_24"
             android:orderInCategory="1"
-            app:showAsAction="always"/>
+            app:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@+id/menuGeral"
+                  android:title="Geral"/>
+            <item android:id="@+id/menuRecentes"
+                  android:title="Recentes"/>
+            <item android:id="@+id/menuFavoritos"
+                  android:title="Favoritos" />
+        </menu>
+    </item>
+
 
 
 </menu>
