@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.example.rodrigo.provamobile.DAO.AppDatabase
 import com.example.rodrigo.provamobile.DAO.MealBD
 import com.example.rodrigo.provamobile.DAO.MealDAO
@@ -119,6 +120,7 @@ class InfoMealsActivity : AppCompatActivity() {
     }
 
     private fun salvaMeal() {
+        Toast.makeText(this,"Receita adicionada aos favoritos", Toast.LENGTH_LONG).show()
         val mealDAO: MealDAO = AppDatabase.getInstance(this).mealDAO()
         doAsync {
             mealDAO.insert(mealbd!!)

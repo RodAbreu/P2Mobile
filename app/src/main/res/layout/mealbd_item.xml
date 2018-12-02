@@ -28,6 +28,12 @@
                 android:text="Nome"/>
 
 
+        <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:text=" "
+                android:background="@color/grey"
+                android:id="@+id/divisor"/>
     </LinearLayout>
-
 </LinearLayout>
