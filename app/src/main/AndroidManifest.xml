@@ -23,7 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".InfoMealsActivity">
+        <activity android:name=".network.InfoMealsActivity">
+        </activity>
+        <activity android:name=".favoritos.ListaFavoritosActivity">
+        </activity>
+        <activity android:name=".favoritos.InfoMealsFavoritosActivity">
         </activity>
     </application>
 

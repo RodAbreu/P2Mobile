@@ -1,33 +1,39 @@
-package com.example.rodrigo.provamobile
+package com.example.rodrigo.provamobile.network
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
+import com.example.rodrigo.provamobile.DAO.AppDatabase
+import com.example.rodrigo.provamobile.DAO.MealBD
+import com.example.rodrigo.provamobile.DAO.MealDAO
 import kotlinx.android.synthetic.main.activity_info_meals.*
 import com.example.rodrigo.provamobile.entities.Meal
-import kotlinx.android.synthetic.main.meal_item.view.*
-import android.widget.ArrayAdapter
-import com.example.rodrigo.provamobile.scenarios_main.MainContract
-import com.example.rodrigo.provamobile.scenarios_main.MainPresenter
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
+import com.example.rodrigo.provamobile.R
+import com.example.rodrigo.provamobile.utils.GlideApp
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
 
 class InfoMealsActivity : AppCompatActivity() {
+
+    companion object {
+        public const val MEAL: String = "Mealbd" //para putExtra entre activities
+    }
+
+
+    var mealbd: MealBD? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_meals)
 
-
-
         val recebeIntent = getIntent()
         val parametros = recebeIntent.getExtras()
 
+        val meal: Meal
         if (parametros != null ){
-            val meal: Meal
             meal = parametros.getSerializable("objeto") as Meal
 
             infoIntrucoes.setText(meal.strInstructions)
@@ -73,49 +79,27 @@ class InfoMealsActivity : AppCompatActivity() {
             if (meal.strMeasure19!=""){medida19.setText(meal.strMeasure19)}
 
 
-            val ingredientes = arrayOf<String>(
-                meal.strIngredient1, meal.strMeasure1,
-                meal.strIngredient2, meal.strMeasure2,
-                meal.strIngredient3, meal.strMeasure3,
-                meal.strIngredient4, meal.strMeasure4,
-                meal.strIngredient5, meal.strMeasure5,
-                meal.strIngredient6, meal.strMeasure6,
-                meal.strIngredient7, meal.strMeasure7,
-                meal.strIngredient8, meal.strMeasure8,
-                meal.strIngredient9, meal.strMeasure9,
-                meal.strIngredient10, meal.strMeasure10,
-                meal.strIngredient11, meal.strMeasure11,
-                meal.strIngredient12, meal.strMeasure12,
-                meal.strIngredient13, meal.strMeasure13,
-                meal.strIngredient14, meal.strMeasure14,
-                meal.strIngredient15, meal.strMeasure15,
-                meal.strIngredient16, meal.strMeasure16,
-                meal.strIngredient17, meal.strMeasure17,
-                meal.strIngredient18, meal.strMeasure18,
-                meal.strIngredient19, meal.strMeasure19
-            )
-
-            val medidas = arrayOf<String>(
-                meal.strMeasure1, meal.strMeasure2, meal.strMeasure3,
-                meal.strMeasure4, meal.strMeasure5, meal.strMeasure6,
-                meal.strMeasure7, meal.strMeasure8, meal.strMeasure9,
-                meal.strMeasure10, meal.strMeasure11, meal.strMeasure12,
-                meal.strMeasure13, meal.strMeasure14, meal.strMeasure15,
-                meal.strMeasure16, meal.strMeasure17, meal.strMeasure18,
-                meal.strMeasure19
-            )
-
-
             GlideApp.with(this)
                 .load(meal.strMealThumb)
                 .placeholder(R.drawable.no_image)
                 .centerCrop()
                 .into(imgFoto)
 
+            mealbd = MealBD(meal.idMeal, meal.strMeal, meal.strCategory, meal.strArea,
+                meal.strInstructions, meal.strMealThumb, meal.strTags, meal.strYoutube,
+                meal.strIngredient1,meal.strIngredient2,meal.strIngredient3,meal.strIngredient4,
+                meal.strIngredient5,meal.strIngredient6,meal.strIngredient7,meal.strIngredient8,
+                meal.strIngredient9,meal.strIngredient10,meal.strIngredient11,meal.strIngredient12,
+                meal.strIngredient13,meal.strIngredient14,meal.strIngredient15,meal.strIngredient16,
+                meal.strIngredient17,meal.strIngredient18,meal.strIngredient19, meal.strIngredient20,
+                meal.strMeasure1,meal.strMeasure2,meal.strMeasure3,meal.strMeasure4,meal.strMeasure5,
+                meal.strMeasure6,meal.strMeasure7,meal.strMeasure8,meal.strMeasure9,meal.strMeasure10,
+                meal.strMeasure11,meal.strMeasure12,meal.strMeasure13,meal.strMeasure14,meal.strMeasure15,
+                meal.strMeasure16,meal.strMeasure17,meal.strMeasure18,meal.strMeasure19,meal.strMeasure20,
+                meal.strSource,meal.dateModified)
+
         }
 
-//        val expandableTextView = findViewById<View>(R.id.expand_text_view) as ExpandableTextView
-//        expandable_text.setText(parametros.getString("intrucoes"))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -127,10 +111,20 @@ class InfoMealsActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.menuSalvar -> {
-                return true
+            R.id.menuSalvar -> salvaMeal()
+
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun salvaMeal() {
+        val mealDAO: MealDAO = AppDatabase.getInstance(this).mealDAO()
+        doAsync {
+            mealDAO.insert(mealbd!!)
+            uiThread {
+                finish()
             }
-            else -> return super.onOptionsItemSelected(item)
 
         }
     }

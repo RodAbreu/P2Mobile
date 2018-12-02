@@ -1,15 +1,14 @@
 package com.example.rodrigo.provamobile.scenarios_main
 
 import android.content.Intent
-import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.example.rodrigo.provamobile.InfoMealsActivity
+import com.example.rodrigo.provamobile.favoritos.ListaFavoritosActivity
+import com.example.rodrigo.provamobile.network.InfoMealsActivity
 import com.example.rodrigo.provamobile.R
 import com.example.rodrigo.provamobile.entities.Meal
 import com.example.rodrigo.provamobile.entities.MealAdapter
@@ -48,7 +47,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
                 return true
             }
             R.id.menuFavoritos -> {
-//                showHelp()
+                val telaFavoritos = Intent(this, ListaFavoritosActivity::class.java)
+                startActivity(telaFavoritos)
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
@@ -73,8 +73,9 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
 
         rvListMeals.adapter = adapter
-        rvListMeals.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
+        rvListMeals.layoutManager = LinearLayoutManager(this)
     }
+
 
     override fun showMessage(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()

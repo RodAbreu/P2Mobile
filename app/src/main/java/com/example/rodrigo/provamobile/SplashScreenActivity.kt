@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.rodrigo.provamobile.scenarios_main.MainActivity
+import com.example.rodrigo.provamobile.utils.GlideApp
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {

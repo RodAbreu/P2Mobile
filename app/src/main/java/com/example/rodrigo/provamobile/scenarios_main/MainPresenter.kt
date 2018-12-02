@@ -1,5 +1,6 @@
 package com.example.rodrigo.provamobile.scenarios_main
 
+import com.example.rodrigo.provamobile.DAO.AppDatabase
 import com.example.rodrigo.provamobile.entities.MealList
 import com.example.rodrigo.provamobile.network.RetrofitInicializer
 import retrofit2.Call
@@ -7,7 +8,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainPresenter(val view : MainContract.View) : MainContract.Presenter {
-
 
     override fun onLoadLatestList() {
         val mealService = RetrofitInicializer().createMealService()
@@ -48,5 +48,6 @@ class MainPresenter(val view : MainContract.View) : MainContract.Presenter {
         })
 
     }
+
 
 }
