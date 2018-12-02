@@ -5,9 +5,11 @@ import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.example.rodrigo.provamobile.InfoMealsActivity
 import com.example.rodrigo.provamobile.R
 import com.example.rodrigo.provamobile.entities.Meal
 import com.example.rodrigo.provamobile.entities.MealAdapter
@@ -34,10 +36,13 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         // Handle item selection
         when (item.itemId) {
             R.id.menuGeral-> {
-//                showHelp()
+                tituloMain.setText("Receitas gerais")
+                val presenter : MainContract.Presenter = MainPresenter(this)
+                presenter.onLoadList()
                 return true
             }
             R.id.menuRecentes -> {
+                tituloMain.setText("Receitas recentes")
                 val presenter : MainContract.Presenter = MainPresenter(this)
                 presenter.onLoadLatestList()
                 return true
@@ -54,13 +59,21 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
         val adapter = MealAdapter(this, list)
         adapter.setOnItemClickListener {position ->
-            val openBrowser = Intent(Intent.ACTION_VIEW)
-            openBrowser.data = Uri.parse(list.get(position).strSource)
-            startActivity(openBrowser)
+//            val openBrowser = Intent(Intent.ACTION_VIEW)
+//            openBrowser.data = Uri.parse(list.get(position).strSource)
+//            startActivity(openBrowser)
+
+            val passagemDeDados = Bundle()
+
+            passagemDeDados.putSerializable("objeto" ,list.get(position))
+
+            val apresentaInfos = Intent(this, InfoMealsActivity::class.java)
+            apresentaInfos.putExtras(passagemDeDados)
+            startActivity(apresentaInfos)
         }
 
         rvListMeals.adapter = adapter
-        rvListMeals.layoutManager = LinearLayoutManager(this)
+        rvListMeals.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
     }
 
     override fun showMessage(msg: String) {

@@ -1,5 +1,7 @@
 package com.example.rodrigo.provamobile.entities
 
+import java.io.Serializable
+
 data class Meal (val idMeal: String,
                  val strMeal: String,
                  val strCategory: String,
@@ -26,5 +28,5 @@ data class Meal (val idMeal: String,
                  val strMeasure19: String, val strMeasure20: String,
 
                  val strSource: String,
-                 val dateModified: String)
+                 val dateModified: String) : Serializable
 
