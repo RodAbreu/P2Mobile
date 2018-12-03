@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.rodrigo.provamobile.favoritos.ListaFavoritosActivity
 import com.example.rodrigo.provamobile.network.InfoMealsActivity
@@ -14,6 +15,7 @@ import com.example.rodrigo.provamobile.entities.Meal
 import com.example.rodrigo.provamobile.entities.MealAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity(), MainContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         setContentView(R.layout.activity_main)
 
         val presenter : MainContract.Presenter = MainPresenter(this)
+
         presenter.onLoadList()
 
     }
@@ -59,9 +62,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
         val adapter = MealAdapter(this, list)
         adapter.setOnItemClickListener {position ->
-//            val openBrowser = Intent(Intent.ACTION_VIEW)
-//            openBrowser.data = Uri.parse(list.get(position).strSource)
-//            startActivity(openBrowser)
 
             val passagemDeDados = Bundle()
 
@@ -80,6 +80,14 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     override fun showMessage(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
-    
+
+    override fun showLoading() {
+        progressbar.visibility = ProgressBar.VISIBLE
+    }
+
+    override fun hideLoading() {
+        progressbar.visibility = ProgressBar.GONE
+    }
+
 
 }

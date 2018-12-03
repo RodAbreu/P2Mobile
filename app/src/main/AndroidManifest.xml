@@ -27,7 +27,7 @@
         </activity>
         <activity android:name=".favoritos.ListaFavoritosActivity">
         </activity>
-        <activity android:name=".favoritos.InfoMealsFavoritosActivity">
+        <activity android:name=".favoritos.InfoMealsFavoritosActivity" android:label="">
         </activity>
     </application>
 

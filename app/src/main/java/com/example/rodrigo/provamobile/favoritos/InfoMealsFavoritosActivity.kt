@@ -23,6 +23,8 @@ class InfoMealsFavoritosActivity : AppCompatActivity() {
         if (parametros != null ) {
             meal = parametros.getSerializable("objeto") as MealBD
 
+            setTitle(meal.strMeal)
+
             infoIntrucoes.setText(meal.strInstructions)
 
             if (meal.strIngredient1 != "") {

@@ -2,11 +2,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item
-            android:id="@+id/menuPesquisar"
-            android:title="pesquisar"
-            android:icon="@drawable/baseline_search_black_24"
-            android:orderInCategory="1"
-            app:showAsAction="always|collapseActionView"/>
-
 </menu>

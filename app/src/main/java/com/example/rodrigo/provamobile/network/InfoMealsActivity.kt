@@ -13,8 +13,7 @@ import kotlinx.android.synthetic.main.activity_info_meals.*
 import com.example.rodrigo.provamobile.entities.Meal
 import com.example.rodrigo.provamobile.R
 import com.example.rodrigo.provamobile.utils.GlideApp
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import org.jetbrains.anko.*
 
 
 class InfoMealsActivity : AppCompatActivity() {
@@ -36,6 +35,8 @@ class InfoMealsActivity : AppCompatActivity() {
         val meal: Meal
         if (parametros != null ){
             meal = parametros.getSerializable("objeto") as Meal
+
+            setTitle(meal.strMeal)
 
             infoIntrucoes.setText(meal.strInstructions)
 
@@ -113,15 +114,14 @@ class InfoMealsActivity : AppCompatActivity() {
 
         when (item.itemId) {
             R.id.menuSalvar -> salvaMeal()
-
-
         }
         return super.onOptionsItemSelected(item)
     }
 
     private fun salvaMeal() {
-        Toast.makeText(this,"Receita adicionada aos favoritos", Toast.LENGTH_LONG).show()
+
         val mealDAO: MealDAO = AppDatabase.getInstance(this).mealDAO()
+
         doAsync {
             mealDAO.insert(mealbd!!)
             uiThread {
@@ -129,5 +129,6 @@ class InfoMealsActivity : AppCompatActivity() {
             }
 
         }
+        Toast.makeText(this,"Receita adicionada aos favoritos", Toast.LENGTH_LONG).show()
     }
 }

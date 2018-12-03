@@ -38,13 +38,7 @@ class ListaFavoritosActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
-        when (item.itemId) {
-            R.id.menuPesquisar -> {
-                return true
-            }
-            else -> return super.onOptionsItemSelected(item)
-        }
+        return super.onOptionsItemSelected(item)
     }
 
     //carrega a lista sempre que a activity é atualizada
