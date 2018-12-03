@@ -5,20 +5,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#f6f6f6"
         tools:context=".SplashScreenActivity"
         android:orientation="vertical">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Olar"
-            android:textSize="50sp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:gravity="center"/>
-
     <ImageView
             android:id="@+id/imgLogoApp"
+            android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="100"/>

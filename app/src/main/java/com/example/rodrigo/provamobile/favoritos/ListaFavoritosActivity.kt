@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.rodrigo.provamobile.DAO.AppDatabase
 import com.example.rodrigo.provamobile.DAO.MealBD
 import com.example.rodrigo.provamobile.R
+import com.example.rodrigo.provamobile.R.id.rvFavoritos
 import kotlinx.android.synthetic.main.activity_lista_favoritos.*
 import org.jetbrains.anko.activityUiThreadWithContext
 import org.jetbrains.anko.doAsync

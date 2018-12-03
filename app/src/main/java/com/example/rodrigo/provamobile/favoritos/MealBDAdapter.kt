@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.rodrigo.provamobile.DAO.MealBD
 import com.example.rodrigo.provamobile.R
 import com.example.rodrigo.provamobile.utils.GlideApp
+import kotlinx.android.synthetic.main.meal_item.view.*
 import kotlinx.android.synthetic.main.mealbd_item.view.*
 
 class MealBDAdapter(val context: Context, val meals: List<MealBD>)
@@ -50,6 +51,7 @@ class MealBDAdapter(val context: Context, val meals: List<MealBD>)
                      clickListener: ((index: Int) -> Unit)?,
                      cliqueLongoListener: ((index: Int) -> Boolean)?) {
             itemView.tvNomeFavoritos.text = meal.strMeal
+            itemView.tvAreaFavoritos.text = meal.strArea
 
             val thumbnail = GlideApp.with(context)
                 .load(R.drawable.no_image)

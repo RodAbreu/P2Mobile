@@ -15,7 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         GlideApp.with(this)
-            .load("https://i.pinimg.com/originals/1f/d9/30/1fd930302eb38570fe25282cf95b77b3.jpg")
+            .load("")
             .placeholder(R.drawable.splashscreen)
             .into(imgLogoApp)
 

@@ -34,6 +34,7 @@ class MealAdapter(val context: Context, val meals: List<Meal>) : RecyclerView.Ad
 
         fun bindView(context: Context, meal: Meal, itemClickListener: ((index: Int) -> Unit)?) {
             itemView.tvItem.text = meal.strMeal
+            itemView.tvArea.text = meal.strArea
 
             GlideApp.with(context)
                 .load(meal.strMealThumb)

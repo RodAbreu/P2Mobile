@@ -21,12 +21,24 @@
         <TextView
                 android:id="@+id/tvNomeFavoritos"
                 android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:gravity="bottom"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:maxLines="3"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/grey"
                 android:text="Nome"/>
 
+        <TextView
+                android:id="@+id/tvAreaFavoritos"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center_vertical"
+                android:textSize="12sp"
+                android:text="Area"/>
 
         <TextView
                 android:layout_marginTop="30dp"

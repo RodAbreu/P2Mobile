@@ -12,22 +12,38 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_marginRight="16dp"
+            android:layout_marginStart="10dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/img_meals"
-            android:src="@drawable/no_image"/>
+            android:src="@drawable/no_image" android:layout_marginLeft="10dp"/>
 
-    <TextView
-            android:id="@+id/tvItem"
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="14sp"
-            android:gravity="center_vertical"
-            android:maxLines="3"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginEnd="16dp"
-            android:textColor="@color/grey"
-            android:text="News Title" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="16dp">
 
+        <TextView
+                android:id="@+id/tvItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:maxLines="3"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/grey"
+                android:text="News Title" />
+
+        <TextView
+                android:id="@+id/tvArea"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center_vertical"
+                android:textSize="12sp"
+                android:text="Origem"/>
+
+    </LinearLayout>
 </LinearLayout>
