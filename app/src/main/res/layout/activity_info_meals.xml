@@ -26,400 +26,112 @@
                     android:background="@color/grey"
                     android:contentDescription="infoImg" />
 
-
         </FrameLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:id="@+id/nomeMeal"
+                android:textAppearance="@android:style/TextAppearance"
+                android:typeface="monospace"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/red"/>
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
             <TextView
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:text="Intruções"
-                      android:textSize="18sp"
-                      android:gravity="center"
-                      android:textStyle="bold"
-                      android:textColor="@color/red"/>
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Receitas"
-                    android:typeface="serif"
-                    android:textAlignment="center"
-                    android:id="@+id/infoIntrucoes"
-                    android:layout_marginLeft="15sp"
-                    android:layout_marginRight="15sp"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:freezesText="true"
-                    android:layout_marginTop="10dp"/>
-
-            <TextView
-                    android:layout_marginTop="7dp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="1px"
-                    android:text=" "
-                    android:background="@color/grey"
-                    android:id="@+id/divisor"/>
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:orientation="horizontal"
-                    android:baselineAligned="false"
-                    android:layout_weight="1">
-
-                    <TextView android:id="@+id/tituloInfoIngredientes"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:text="Ingredientes"
-                              android:textSize="14sp"
-                              android:layout_marginTop="7dp"
-                              android:layout_weight="0.5"
-                              android:textStyle="bold"
-                              android:gravity="center"
-                              android:textColor="@color/red"/>
-
-                    <TextView android:id="@+id/tituloInfoMedida"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:text="Medidas"
-                              android:textSize="14sp"
-                              android:layout_marginTop="7dp"
-                              android:layout_weight="0.5"
-                              android:gravity="center"
-                              android:textStyle="bold"
-                              android:textColor="@color/red"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                    android:layout_marginTop="7dp"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:text="Ingredientes"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1">
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="monospace"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="16dp"/>
 
-                <LinearLayout
-                        android:layout_marginTop="7dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="0.5">
+            <TextView
+                    android:text="Medidas"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_marginRight="16dp"/>
 
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:ellipsize="end"
-                            android:id="@+id/ingrediente1"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente2"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente3"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente4"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente5"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente6"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente7"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente8"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente9"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente10"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente11"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente12"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente13"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente14"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente15"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente16"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente17"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente18"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/ingrediente19"/>
-
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                        android:layout_marginTop="7dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="0.5">
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida1"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida2"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida3"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida4"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida5"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida6"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida7"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida8"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida9"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida10"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida11"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida12"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida13"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida14"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida15"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida16"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida17"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida18"/>
-
-                    <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:id="@+id/medida19"/>
-
-
-                </LinearLayout>
-            </LinearLayout>
 
         </LinearLayout>
 
-        <RelativeLayout
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal" >
+
+                <TextView
+                        android:id="@+id/test"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:textColor="@color/grey"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="16dp"/>
+
+                <TextView
+                        android:id="@+id/test2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:textColor="@color/grey"
+                        android:textSize="12sp"
+                        android:layout_marginRight="16dp"/>
+            </LinearLayout>
+
+        <TextView
+                android:text="Instruçoes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_marginRight="16dp"/>
+
+        <TextView
+                android:id="@+id/infoIntrucoes"
+                android:text="Instruções"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/relativeLayout">
-
-            <ListView
-                    android:id="@+id/lista_jornais"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    tools:listitem="@android:layout/simple_list_item_1"
-                    android:layout_alignParentTop="true" />
-
-            <ScrollView
-                    android:id="@+id/scrollView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-        </RelativeLayout>
-
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:layout_marginTop="7dp"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                android:layout_marginRight="16dp"/>
 
     </LinearLayout>
 </ScrollView>

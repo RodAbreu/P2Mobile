@@ -8,7 +8,4 @@
             android:title="olar"
             android:orderInCategory="1"
             app:showAsAction="always|collapseActionView"/>
-
-
-
 </menu>
