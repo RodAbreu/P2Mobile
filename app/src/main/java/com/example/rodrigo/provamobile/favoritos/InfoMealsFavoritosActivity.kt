@@ -57,8 +57,8 @@ class InfoMealsFavoritosActivity : AppCompatActivity() {
                 }
             }
 
-            test.text = stringIngredient
-            test2.text = stringQuantity
+            idIngredientes.text = stringIngredient
+            idMedidas.text = stringQuantity
 
 
             GlideApp.with(this)

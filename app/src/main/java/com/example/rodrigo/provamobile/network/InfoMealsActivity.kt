@@ -1,8 +1,12 @@
 package com.example.rodrigo.provamobile.network
 
+import android.app.PendingIntent
+import android.app.TaskStackBuilder
 import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.NotificationCompat
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -12,10 +16,12 @@ import com.example.rodrigo.provamobile.DAO.MealDAO
 import kotlinx.android.synthetic.main.activity_info_meals.*
 import com.example.rodrigo.provamobile.entities.Meal
 import com.example.rodrigo.provamobile.R
+import com.example.rodrigo.provamobile.scenarios_main.MainActivity
 import com.example.rodrigo.provamobile.utils.GlideApp
 import org.jetbrains.anko.*
 
 
+@Suppress("DEPRECATION")
 class InfoMealsActivity : AppCompatActivity() {
 
     companion object {
@@ -28,6 +34,7 @@ class InfoMealsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_meals)
+
 
         val recebeIntent = getIntent()
         val parametros = recebeIntent.getExtras()
@@ -71,8 +78,8 @@ class InfoMealsActivity : AppCompatActivity() {
                 }
             }
 
-            test.text = stringIngredient
-            test2.text = stringQuantity
+            idIngredientes.text = stringIngredient
+            idMedidas.text = stringQuantity
 
 
             GlideApp.with(this)
@@ -94,6 +101,18 @@ class InfoMealsActivity : AppCompatActivity() {
                 meal.strMeasure16,meal.strMeasure17,meal.strMeasure18,meal.strMeasure19,meal.strMeasure20,
                 meal.strSource,meal.dateModified)
 
+
+            GlideApp.with(this)
+                .load("")
+                .placeholder(R.drawable.icons8youtube48)
+                .centerCrop()
+                .into(idYoutube)
+
+
+            idYoutube.setOnClickListener(){
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(meal.strYoutube))
+                startActivity(browserIntent)
+            }
         }
 
     }
@@ -126,3 +145,4 @@ class InfoMealsActivity : AppCompatActivity() {
         Toast.makeText(this,"Receita adicionada aos favoritos", Toast.LENGTH_LONG).show()
     }
 }
+

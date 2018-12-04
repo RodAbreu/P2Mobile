@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">MobileChef</string>
     <string name="img_meals">Imagem relacionada à notícia</string>
+    <string name="instrucoes">Instruções</string>
+    <string name="titulo_instrucoes">Instruçoes</string>
+    <string name="titulo_ingredientes">Ingredientes</string>
+    <string name="titulo_medidas">Medidas</string>
 
 </resources>

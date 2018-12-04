@@ -31,7 +31,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nome"
+                android:text="Nome Receita"
                 android:id="@+id/nomeMeal"
                 android:textAppearance="@android:style/TextAppearance"
                 android:typeface="monospace"
@@ -47,19 +47,19 @@
 
             <TextView
                     android:layout_width="0dp"
-                    android:text="Ingredientes"
+                    android:text="@string/titulo_ingredientes"
                     android:layout_height="match_parent"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
                     android:fontFamily="monospace"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:textColor="#000"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:layout_marginLeft="16dp"/>
 
             <TextView
-                    android:text="Medidas"
+                    android:text="@string/titulo_medidas"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="16dp"
@@ -67,7 +67,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="monospace"
                     android:gravity="center"
-                    android:textColor="#000"
+                    android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:layout_marginRight="16dp"/>
 
@@ -82,7 +82,7 @@
                     android:orientation="horizontal" >
 
                 <TextView
-                        android:id="@+id/test"
+                        android:id="@+id/idIngredientes"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="16dp"
@@ -94,7 +94,7 @@
                         android:layout_marginLeft="16dp"/>
 
                 <TextView
-                        android:id="@+id/test2"
+                        android:id="@+id/idMedidas"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="16dp"
@@ -106,34 +106,54 @@
                         android:layout_marginRight="16dp"/>
             </LinearLayout>
 
-        <TextView
-                android:text="Instruçoes"
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="1"
-                android:layout_marginTop="10dp"
-                android:fontFamily="monospace"
-                android:gravity="center"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:layout_marginRight="16dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+            <TextView
+                    android:text="@string/titulo_instrucoes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_marginRight="16dp"/>
+
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:id="@+id/idYoutube"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icons8youtube48" android:layout_marginRight="30dp"/>
+
+        </LinearLayout>
 
         <TextView
                 android:id="@+id/infoIntrucoes"
-                android:text="Instruções"
+                android:text="@string/instrucoes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="1"
-                android:layout_marginTop="7dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
                 android:fontFamily="monospace"
                 android:gravity="center"
+                android:textIsSelectable="true"
                 android:textColor="@color/grey"
                 android:textSize="14sp"
                 android:layout_marginRight="16dp"/>
 
     </LinearLayout>
+
 </ScrollView>
 
 

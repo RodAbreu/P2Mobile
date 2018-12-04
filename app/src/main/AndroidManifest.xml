@@ -23,11 +23,23 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".network.InfoMealsActivity">
+        <activity android:name=".network.InfoMealsActivity"
+                  android:parentActivityName=".scenarios_main.MainActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".scenarios_main.MainActivity"/>
         </activity>
-        <activity android:name=".favoritos.ListaFavoritosActivity">
+        <activity android:name=".favoritos.ListaFavoritosActivity"
+                  android:parentActivityName=".scenarios_main.MainActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".scenarios_main.MainActivity"/>
         </activity>
-        <activity android:name=".favoritos.InfoMealsFavoritosActivity">
+        <activity android:name=".favoritos.InfoMealsFavoritosActivity"
+                  android:parentActivityName=".favoritos.ListaFavoritosActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".favoritos.ListaFavoritosActivity"/>
         </activity>
     </application>
 
